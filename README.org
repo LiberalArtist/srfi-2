@@ -4,6 +4,8 @@
 
 
 
+keywords: [[https://srfi.schemers.org/?keywords=binding][Binding]], [[https://srfi.schemers.org/?keywords=control-flow][Control Flow]]
+
 This repository hosts [[https://srfi.schemers.org/srfi-2/][SRFI 2]]: AND-LET*: an AND with local bindings, a guarded LET* special form, a [[https://srfi.schemers.org/][Scheme Request for Implementation]].
 
 This SRFI is in /final/ status.
