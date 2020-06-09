@@ -24,6 +24,13 @@ Oleg Kiselyov
       <LI>Revised: 1999-02-09
       <LI>Draft: 1998-12-28--1999-02-28
       <LI>Final: 1999-03-01
+      <li>Revised to fix errata:
+	<ul>
+	  <li>2020-06-08 (Fixed: Variables bound by AND-LET* needn't
+	    be unique.  This requirement was based on the mistaken
+	    impression that LET* imposed that requirement, which it
+	    doesn't.  Also, updated link to sample implementation to
+	    point tof a more recent version by Oleg.)</li></ul></li>
 </UL>
 
 <H1>Abstract</H1>
@@ -122,7 +129,7 @@ CLAW  ::=  (VARIABLE EXPRESSION) | (EXPRESSION) |
 <LI>Otherwise, if  the CLAW is of the form (VARIABLE EXPRESSION)
 the EXPRESSION's value is bound to a freshly made VARIABLE
 <LI>The VARIABLE is available for the rest of the CLAWS , and the BODY
-<LI>As usual, all VARIABLEs must be unique (like in let*)
+<LI><del>As usual, all VARIABLEs must be unique (like in let*)</del>
 </UL>
 
 <H2>Formal (Denotational) Semantics</H2>
@@ -153,14 +160,7 @@ ext_claw_env[ (VARIABLE EXPRESSION), env ] =
 
 <H1>Implementation</H1>
 
-<P>The full implementation plus the validation code are available <A href=vland-gambit.scm>here</A> (which is a copy of
-<A href="http://okmij.org/ftp/Scheme/tests/vland.scm">
-http://okmij.org/ftp/Scheme/tests/vland.scm</A>).
-
-<P>This is an implementation of AND-LET* as a (Gambit) low-level macro that
-re-writes AND-LET* as a "tree" of AND and LET forms. A validation code is
-also presented, which verifies not only that everything works as
-expected, but also that AND-LET* finds syntax errors where expected.
+<P>A full sample implementation is available at <A class="eponymous" href="http://okmij.org/ftp/Scheme/lib/myenv-chez.scm">http://okmij.org/ftp/Scheme/lib/myenv-chez.scm</A>.  The test suite is at <a class="eponymous" href="http://okmij.org/ftp/Scheme/tests/vland.scm">http://okmij.org/ftp/Scheme/tests/vland.scm</a>.
 
 <H1>Copyright</H1>
 Copyright (C) Oleg Kiselyov (1998). All Rights Reserved. 
