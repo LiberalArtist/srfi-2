@@ -10,6 +10,8 @@ This repository hosts [[https://srfi.schemers.org/srfi-2/][SRFI 2]]: AND-LET*: a
 
 This SRFI is in /final/ status.
 
+See also [[https://srfi.schemers.org/srfi-202/][SRFI 202: Pattern-matching Variant of the and-let* Form that Supports Multiple Values]].
+
 The full documentation for this SRFI can be found in the [[https://srfi.schemers.org/srfi-2/srfi-2.html][SRFI Document]].
 
 If you'd like to participate in the discussion of this SRFI, or report issues with it, please [[https://srfi.schemers.org/srfi-2/][join the SRFI-2 mailing list]] and send your message there.
