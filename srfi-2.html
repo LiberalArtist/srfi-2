@@ -69,17 +69,17 @@ every produced result "makes sense" (that is, not an #f). The first
 Examples:
 <PRE>
 (AND-LET* ((my-list (compute-list)) ((not (null? my-list))))
-          (do-something my-list))
+    (do-something my-list))
 
 (define (look-up key alist)
   (and-let* ((x (assq key alist))) (cdr x)))
 
 (or
-  (and-let* ((c (read-char))
-    ((not (eof-object? c))))
-    (string-set! some-str i c)  
-    (set! i (+ 1 i)))
-  (begin (do-process-eof)))
+ (and-let* ((c (read-char))
+            ((not (eof-object? c))))
+     (string-set! some-str i c)
+   (set! i (+ 1 i)))
+ (begin (do-process-eof)))
 
 			; A more realistic example
                         ; Parse the 'timestamp' ::= 'token1' 'token2'
