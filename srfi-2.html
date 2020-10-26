@@ -30,7 +30,9 @@ Oleg Kiselyov
 	    be unique.  This requirement was based on the mistaken
 	    impression that LET* imposed that requirement, which it
 	    doesn't.  Also, updated link to sample implementation to
-	    point to a more recent version by Oleg.)</li></ul></li>
+	    point to a more recent version by Oleg.)</li>
+	  <li>2020-10-26 (Clarified what is meant by BODY in (and-let*
+	    (CLAWS) BODY).)</ul></li>
 </UL>
 
 <H1>Abstract</H1>
@@ -130,6 +132,8 @@ CLAW  ::=  (VARIABLE EXPRESSION) | (EXPRESSION) |
 the EXPRESSION's value is bound to a freshly made VARIABLE
 <LI>The VARIABLE is available for the rest of the CLAWS , and the BODY
 <LI><del>As usual, all VARIABLEs must be unique (like in let*)</del>
+<LI>BODY is a body as in a LET* form.</LI>
+
 </UL>
 
 <H2>Formal (Denotational) Semantics</H2>
@@ -140,7 +144,7 @@ eval[ (AND-LET* (CLAW1 ...) BODY), env] =
    eval[ (AND-LET* ( ...) BODY), ext_claw_env[CLAW1, env]]
 
 eval[ (AND-LET* (CLAW) ), env] = eval_claw[ CLAW, env ]
-eval[ (AND-LET* () FORM1 ...), env] = eval[ (BEGIN FORM1 ...), env ]
+eval[ (AND-LET* () FORM1 ...), env] = eval[ (LET* () FORM1 ...), env ]
 eval[ (AND-LET* () ), env] = #t
 
 eval_claw[ BOUND-VARIABLE, env ] =
