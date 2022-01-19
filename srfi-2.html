@@ -1,22 +1,19 @@
 <!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
-<html>
+<html lang="en">
   <head>
     <meta charset="utf-8" />
     <title>SRFI 2: AND-LET*: an AND with local bindings, a guarded LET* special form</title>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link rel="stylesheet" href="/srfi.css" type="text/css" />
+    <link rel="stylesheet" href="https://srfi.schemers.org/srfi.css" type="text/css" />
+    <link href="/favicon.png" rel="icon" sizes="192x192" type="image/png">
   </head>
 
 <body>
-<H1>Title</H1>
+<h1><a href="https://srfi.schemers.org/"><img class="srfi-logo" src="https://srfi.schemers.org/srfi-logo.svg" alt="SRFI surfboard logo" /></a>2: AND-LET*: an AND with local bindings, a guarded LET* special form</h1>
 
-AND-LET*: an AND with local bindings, a guarded LET* special form
+<p>by Oleg Kiselyov</p>
 
-<H1>Author</H1>
-
-Oleg Kiselyov
-
-<H1>Status</H1>
+<h2>Status</h2>
 
 <p>This SRFI is currently in <em>final</em> status.  Here is <a href="https://srfi.schemers.org/srfi-process.html">an explanation</a> of each status that a SRFI can hold.  To provide input on this SRFI, please send email to <code><a href="mailto:srfi+minus+2+at+srfi+dotschemers+dot+org">srfi-2@<span class="antispam">nospam</span>srfi.schemers.org</a></code>.  To subscribe to the list, follow <a href="https://srfi.schemers.org/srfi-list-subscribe.html">these instructions</a>.  You can access previous messages via the mailing list <a href="https://srfi-email.schemers.org/srfi-2">archive</a>.</p>
 <UL>
@@ -35,7 +32,7 @@ Oleg Kiselyov
 	    (CLAWS) BODY).)</ul></li>
 </UL>
 
-<H1>Abstract</H1>
+<h2>Abstract</h2>
 
 <P>Like an ordinary AND, an AND-LET* special form evaluates its arguments --
 expressions -- one after another in order, till the first one that
@@ -43,7 +40,7 @@ yields #f. Unlike AND, however, a non-#f result of one expression can
 be bound to a fresh variable and used in the subsequent expressions.
 AND-LET* is a cross-breed between LET* and AND.
 
-<H1>Rationale</H1>
+<h2>Rationale</h2>
 
 <P>In case of an ordinary AND formed of proper boolean expressions:<BR>
 (AND E1 E2 ...)<BR>
@@ -112,9 +109,9 @@ intermediate result, each of which continues to be bound through the
 rest of the form.
 
 
-<H1>Specification</H1>
+<h2>Specification</h2>
 
-<H2 id="and-let">Syntax and Informal Semantics</H2>
+<h3 id="and-let">Syntax and Informal Semantics</h3>
 
 <PRE>
 AND-LET* (CLAWS) BODY
@@ -136,7 +133,7 @@ the EXPRESSION's value is bound to a freshly made VARIABLE
 
 </UL>
 
-<H2>Formal (Denotational) Semantics</H2>
+<h3>Formal (Denotational) Semantics</h3>
 
 <PRE>
 eval[ (AND-LET* (CLAW1 ...) BODY), env] =
@@ -162,11 +159,11 @@ ext_claw_env[ (VARIABLE EXPRESSION), env ] =
               VARIABLE boundto eval[ EXPRESSION, env ]]
 </PRE>
 
-<H1>Implementation</H1>
+<h2>Implementation</h2>
 
 <P>A full sample implementation is available at <A class="eponymous" href="http://okmij.org/ftp/Scheme/lib/myenv-chez.scm">http://okmij.org/ftp/Scheme/lib/myenv-chez.scm</A>.  The test suite is at <a class="eponymous" href="http://okmij.org/ftp/Scheme/tests/vland.scm">http://okmij.org/ftp/Scheme/tests/vland.scm</a>.
 
-<H1>Copyright</H1>
+<h2>Copyright</h2>
 Copyright (C) Oleg Kiselyov (1998). All Rights Reserved. 
 <p>
 Permission is hereby granted, free of charge, to any person obtaining
